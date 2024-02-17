@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:cyrilcero/reddit_clone.git",
   "author": "cyrilcero <cyril.cero@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest"
 }
