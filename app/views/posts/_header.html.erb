@@ -1,13 +1,16 @@
 <section>
   <div class="h-32 bg-[#54a2fb]"></div>
   <div class="flex justify-between items-center py-2 px-16 bg-gray-100">
-    <div>
-      <%= link_to 'ChikaPH', root_path, class: "font-extrabold text-4xl" %>
-      <!-- <h1 class="font-extrabold text-4xl">ChikaPH</h1> -->
-      <h5 class="text-xl">r/ChikaPH</h5>
+    <div class="flex items-center gap-4 ">
+      <%= image_tag("chikaph.png", class: "-mt-10 w-[30%] rounded-full aspect-1 border-4 border-spacing-4 border-red-400")%>
+      <div>
+        <%= link_to 'ChikaPH', root_path, class: "font-extrabold text-4xl" %>
+        <h5 class="text-xl">r/ChikaPH</h5>
+      </div>
     </div>
     <% if defined?(show_actions) && show_actions %>
       <%= render partial: 'header_actions' %>
     <% end %>
   </div>
+</div>
 </section>
