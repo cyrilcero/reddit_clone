@@ -6,7 +6,6 @@
   "author": "cyrilcero <cyril.cero@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src -d lib",
-    "test": "jest"
+    "build:css": "tailwindcss build app/assets/stylesheets/application.css -o public/assets/application.css"
   }
 }
