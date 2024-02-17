@@ -1,0 +1,13 @@
+<section>
+  <div class="h-32 bg-[#54a2fb]"></div>
+  <div class="flex justify-between items-center py-2 px-16 bg-gray-100">
+    <div>
+      <%= link_to 'ChikaPH', root_path, class: "font-extrabold text-4xl" %>
+      <!-- <h1 class="font-extrabold text-4xl">ChikaPH</h1> -->
+      <h5 class="text-xl">r/ChikaPH</h5>
+    </div>
+    <% if defined?(show_actions) && show_actions %>
+      <%= render partial: 'header_actions' %>
+    <% end %>
+  </div>
+</section>

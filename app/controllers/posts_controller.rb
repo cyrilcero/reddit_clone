@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "Post was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: 422
     end
   end
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: "Post was successfully updated.", status: :see_other
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: 422
     end
   end
 
