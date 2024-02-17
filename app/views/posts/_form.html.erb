@@ -17,7 +17,8 @@
     <%= form.label :body %>
     <%= form.text_area :body, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="flex">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="flex gap-4">
+    <%= form.submit class: "rounded-lg py-3 px-6 bg-blue-600 text-white font-medium cursor-pointer" %>
+    <%= link_to "Back to posts", posts_path, class: "rounded-lg py-3 px-6 bg-gray-100 font-medium" %>
   </div>
 <% end %>
