@@ -1,7 +1,7 @@
 databases:
   - name: reddit_clone_development
     databaseName: reddit_clone_development
-    user: mysite
+    user: cyrilcero
     plan: free
 
 services:
