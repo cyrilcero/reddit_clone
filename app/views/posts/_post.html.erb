@@ -1,12 +1,24 @@
 <%= link_to post do %>
-  <div id="<%= dom_id(post) %>" class="bg-gray-100 p-4 rounded-lg mb-4">
-    <div class="py-1 flex items-end gap-2">
-      <div class="text-3xl font-bold">
-        <%= post.title %>
+  <div id="<%= dom_id post%>" class="bg-gray-100 p-4 rounded-lg mb-4">
+    <div class="flex justify-between mb-2">
+      <div class="flex items-end gap-2 ">
+        <div class="text-3xl font-bold">
+          <%= post.title %>
+        </div>
+        <div class="text-gray-400">
+          <%= I18n.t("date.abbr_month_names")[post.created_at.month] %> <%= post.created_at.day %>, <%= post.created_at.year %>
+        </div>
       </div>
-      <div class="text-gray-400">
-        <%= I18n.t("date.abbr_month_names")[post.created_at.month] %> <%= post.created_at.day %>, <%= post.created_at.year %>
-      </div>
+      <% if params[:action] == 'show' %>
+        <div class="flex gap-2">
+          <%= link_to edit_post_path(post), class: "rounded-lg py-2 px-4 bg-blue-600 font-medium text-gray-100" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <%= button_to post_path(post), method: :delete, class: "rounded-lg py-2 px-4 bg-red-600 font-medium text-gray-100", data: {turbo_confirm: "Delete the post?"} do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="py-4">
       <%= post.body %>
