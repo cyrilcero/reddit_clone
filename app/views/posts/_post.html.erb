@@ -1,13 +1,27 @@
 <%= link_to post do %>
-  <div id="<%= dom_id post %>">
-    <div class="py-1 text-3xl">
-      <%= post.title %>
+  <div id="<%= dom_id(post) %>" class="bg-gray-100 p-4 rounded-lg mb-4">
+    <div class="py-1 flex items-end gap-2">
+      <div class="text-3xl font-bold">
+        <%= post.title %>
+      </div>
+      <div class="text-gray-400">
+        <%= I18n.t("date.abbr_month_names")[post.created_at.month] %> <%= post.created_at.day %>, <%= post.created_at.year %>
+      </div>
     </div>
     <div class="py-4">
       <%= post.body %>
     </div>
-    <% if action_name != "show" %>
-      <hr class="m-4">
-    <% end %>
+    <hr class="my-4">
+    <div class="flex gap-4">
+      <button>
+        <i class="fa-regular fa-comment"></i> Comment
+      </button>
+      <button>
+        <i class="fa-solid fa-share-from-square"></i> Share
+      </button>
+      <button>
+        <i class="fa-regular fa-bookmark"></i> Save
+      </button>
+    </div>
   </div>
 <% end %>
