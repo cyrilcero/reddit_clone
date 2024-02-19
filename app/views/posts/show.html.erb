@@ -2,8 +2,8 @@
   <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block absolute top-20 right-20 z-50" id="notice"><%= notice %></p>
 <% end %>
 <%= render partial: 'header', locals: {show_actions: false} %>
-<section class="flex justify-between px-16 py-4">
-  <div>
+<section class="flex justify-between px-16 py-4 gap-4">
+  <div class="w-2/3">
     <%= render @post %>
     <%= link_to edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" do %>
       <i class="fas fa-edit"></i>
